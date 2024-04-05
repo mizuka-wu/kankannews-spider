@@ -17,7 +17,7 @@ async function loadShanghaiLive (lives = []) {
     const page = await browser.newPage()
     await page.goto('https://live.kankanews.com/huikan/')
     console.log('page success', page)
-    await page.waitForTimeout(10000);
+    await page.waitForSelector('video')
     console.log('sleep success')
     // 加载对应的api
     const result = await page.evaluate(`
